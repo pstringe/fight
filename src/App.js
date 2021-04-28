@@ -13,15 +13,15 @@ function App() {
   const [opponents, setOpponents] = useState([
     {
         name: 'Elon Musk',
-        url: ''
+        imgUrl: 'https://www.bloomberg.com/features/2016-solar-power-buffett-vs-musk/img/buffett_vs_musk.jpg'
     },
     {
         name: 'Donald Trump',
-        url: ''
+        imgUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/07/10/donald-trump-fight-biden.jpg?width=1200&auto=webp&quality=75'
     },
     {
         name: 'Joe Rogan',
-        url: ''
+        imgUrl: 'https://www.lowkickmma.com/wp-content/uploads/2016/02/JoeRogan600x400.jpg'
     }
   ]);
   const [current, setCurrent] = useState(0);

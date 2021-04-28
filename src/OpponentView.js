@@ -15,18 +15,26 @@ const useStyles = makeStyles({
         width: '100vw',
     },
     card: {
+        display: 'flex',
         width: 500,
-        height: 500
+        height: 500,
+        flexDirection: 'column',
+
+    },
+    img: {
+        width: 520,
+        height: 520
     }
 });
 
 const OpponentView = ({opponent}) => {
     
     const classes = useStyles();
-
+    console.log('img', opponent.imgUrl);
     return ( 
         <Box className={classes.root}>
             <Card className={classes.card}>
+                <img className={classes.img} src={opponent.imgUrl}/>
                 <Typography variant='h6'>{opponent.name}</Typography>
             </Card>
         </Box> 
