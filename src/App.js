@@ -5,7 +5,7 @@ import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from './Header';
 import OpponentView from './OpponentView';
-
+import Tools from './Tools';
 import '@fontsource/roboto';
 
 
@@ -26,11 +26,28 @@ function App() {
   ]);
   const [current, setCurrent] = useState(0);
 
+  const swipeLeft = () => {
+    setOpponents(cur=> {
+      let newOpponents = cur.slice();
+      newOpponents.splice(current, 1);
+      return newOpponents;
+    })
+    
+  };
+
+  const swipeRight = () => {
+    setCurrent(cur => Math.min(opponents.length - 1, cur + 1));
+  };
+
+  const goBack = () => {
+    setCurrent(cur => Math.max(0, cur - 1));
+  }
+
   return (
     <Box className="app">
       <Header/>
       <OpponentView opponent={opponents[current]}/>
-      {/*Swipe Tools*/}
+      <Tools back={goBack} left={swipeLeft} right={swipeRight}/>
     </Box>
   );
 }
